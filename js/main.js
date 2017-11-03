@@ -5,6 +5,7 @@ var num = 9;
 
 var leftCars = ["#ob1", "#ob3", "#ob5", "#ob7"];
 var rightCars = ["#ob2", "#ob4", "#ob6", "#ob8"];
+var carColors = ["graycar", "bluecar", "pinkcar", "tancar", "redcar"];
 
 
 $(document).ready(function() {
@@ -245,7 +246,9 @@ var addCars = function() {
     };
 
     $streetL.each(function() {
-        newCarCode = '<div id="ob' + num + '"><img src="./images/redcar.png" id="redcar"></div>';
+        var colorNum = Math.floor(Math.random() * 3) + 2;
+        newCarCode = '<div id="ob' + num + '"><img src="./images/' +
+            carColors[colorNum] + '.png"></div>';
         $(this).append(newCarCode);
         $("#ob" + num).css(carLCSS);
         leftCars.push("#ob" + num);
@@ -253,7 +256,9 @@ var addCars = function() {
     });
 
     $streetR.each(function() {
-        newCarCode = '<div id="ob' + num + '"><img src="./images/redcar.png" id="redcar"></div>';
+        var colorNum = Math.floor(Math.random() * 2);
+        newCarCode = '<div id="ob' + num + '"><img src="./images/' +
+            carColors[colorNum] + '.png"></div>';
         $(this).append(newCarCode);
         $("#ob" + num).css(carRCSS);
         rightCars.push("#ob" + num);
@@ -264,5 +269,3 @@ var addCars = function() {
 var increaseSpeed = function() {
     speed -= 30;
 }
-
-//create info sequence
