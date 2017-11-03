@@ -19,8 +19,6 @@ $(document).ready(function() {
 
     startCars();
 
-
-
     $(document).keyup(function(e) {
         switch (e.which) {
             case 37:
@@ -69,7 +67,6 @@ $(document).ready(function() {
         }
     });
 });
-
 
 
 //https://stackoverflow.com/questions/4822524/continuous-movement-animation-with-jquery
@@ -133,11 +130,8 @@ var stopCars = function() {
     });
 }
 
-
-
 //https://stackoverflow.com/questions/4230029/jquery-javascript-collision-detection
 var collideChecker = function(frog, car) {
-
 
     var Frog = {};
     var Car = {};
@@ -152,26 +146,21 @@ var collideChecker = function(frog, car) {
     Car.right = Number($(car).offset().left) + Number($(car).width());
     Car.bottom = Number($(car).offset().top) + Number($(car).height());
 
-
-
-
     if (Frog.right > Car.left && Frog.left < Car.right && Frog.top < Car.bottom && Frog.bottom > Car.top) {
-        console.log("wreck");
-
+        //console.log("wreck");
 
         blinkBad()
-
         resetPosition();
-
-
     }
 }
+
 var collisionCheckerAll = function(frog) {
     for (var i = 1; i < num; i++) {
         collideChecker($(frog), $("#ob" + i));
     }
 
 }
+
 var blinkBad = function() {
     var interval;
 
@@ -182,6 +171,7 @@ var blinkBad = function() {
         clearInterval(interval);
     }, 1000);
 }
+
 var blinkGood = function() {
     var interval;
 
@@ -218,8 +208,6 @@ var updateLevel = function() {
 var resetPosition = function() {
     $(frog).css({ top: "400px", left: "550px" });
 }
-
-
 
 var addCars = function() {
     var streetleft = "";
@@ -268,4 +256,21 @@ var addCars = function() {
 
 var increaseSpeed = function() {
     speed -= 30;
+}
+
+var reloadGame = function() {
+    if (confirm("Are you sure you want to start a new game?")) {
+        location.reload();
+    }
+}
+
+var exitGame = function() {
+    if (confirm("Close Window?")) {
+
+        window.open('about:blank', '_self', '');
+        window.close();
+    }
+}
+var loadInfo = function() {
+
 }

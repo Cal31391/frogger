@@ -10,8 +10,6 @@
     position: relative;
 }
 
-
-
 #ob2,
 #ob4,
 #ob6,
@@ -82,4 +80,16 @@
 
 body {
     background-color: black;
+}
+
+.info-board {
+    background-color: gray;
+    padding: 5%;
+}
+
+.game-btn {
+    padding: 1%;
+    margin: 10% 0%;
+    color: green;
+    font-weight: bold;
 }
