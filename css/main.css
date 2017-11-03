@@ -93,3 +93,17 @@ body {
     color: green;
     font-weight: bold;
 }
+
+#info-modal {
+    position: fixed;
+    z-index: 100;
+    top: 30%;
+    left: 25%;
+    height: 40%;
+    width: 50%;
+    border-style: solid;
+    border-color: yellow;
+    background: #888888;
+    overflow: auto;
+    display: none;
+}

@@ -10,11 +10,16 @@ var carColors = ["graycar", "bluecar", "pinkcar", "tancar", "redcar"];
 
 $(document).ready(function() {
     var frog = $("#frog");
+    var modal = $("#info-modal");
 
 
     window.setInterval(function() {
         collisionCheckerAll(frog);
     }, 100);
+
+    $(modal).click(function() {
+        $(modal).css({ display: "none" });
+    });
 
 
     startCars();
@@ -272,5 +277,5 @@ var exitGame = function() {
     }
 }
 var loadInfo = function() {
-
+    $("#info-modal").css({ display: "block" });
 }
