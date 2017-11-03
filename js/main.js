@@ -1,6 +1,7 @@
-var i = 2;
+var inc = 2;
 var j = 30;
 var speed = 1000;
+var num = 9;
 
 var leftCars = ["#ob1", "#ob3", "#ob5", "#ob7"];
 var rightCars = ["#ob2", "#ob4", "#ob6", "#ob8"];
@@ -110,12 +111,12 @@ var startCars = function() {
     var n = 0;
 
     jQuery.each(rightCars, function(i, val) {
-        n = Math.floor(Math.random() * 9) + 5;
+        n = Math.floor(Math.random() * 5) + 5;
         animateRight($(val), (speed * n));
     });
 
     jQuery.each(leftCars, function(i, val) {
-        n = Math.floor(Math.random() * 9) + 5;
+        n = Math.floor(Math.random() * 5) + 5;
         animateLeft($(val), (speed * n));
     });
 }
@@ -165,7 +166,7 @@ var collideChecker = function(frog, car) {
     }
 }
 var collisionCheckerAll = function(frog) {
-    for (var i = 1; i < 9; i++) {
+    for (var i = 1; i < num; i++) {
         collideChecker($(frog), $("#ob" + i));
     }
 
@@ -193,33 +194,75 @@ var blinkGood = function() {
 }
 
 var updateLevel = function() {
-    $("#level").replaceWith("<h4 id=level>Level: " + i + "</h4>");
-    i++;
+    $("#level").replaceWith("<h4 id=level>Level: " + inc + "</h4>");
 
     $("#points").replaceWith("<h4 id=points>Points: " + j + "</h4>");
     j += j;
 
     stopCars();
+
+    if (inc % 5 == 0) {
+        addCars();
+    }
+    if (inc % 2 == 0) {
+        increaseSpeed();
+    }
+    inc++;
+
     blinkGood();
     resetPosition();
-    increaseDifficulty();
     startCars();
-
-
-    console.log(speed);
 }
 
 var resetPosition = function() {
     $(frog).css({ top: "400px", left: "550px" });
 }
 
-var increaseDifficulty = function() {
-    speed -= 100;
 
-    $('#street-left').each(function() {
-        //add new car 
+
+var addCars = function() {
+    var streetleft = "";
+    var streetright = "";
+    var newCarCode = "";
+    var $streetL = $(".street-left");
+    var $streetR = $(".street-right");
+
+    var carLCSS = {
+        "right": "-120%",
+        "z-index": "10",
+        "height": "30px",
+        "width": "60px",
+        "display": "inline-block",
+        "position": "relative"
+    };
+    var carRCSS = {
+        "left": "-100%",
+        "z-index": "10",
+        "height": "30px",
+        "width": "60px",
+        "display": "inline-block",
+        "position": "relative"
+    };
+
+    $streetL.each(function() {
+        newCarCode = '<div id="ob' + num + '"><img src="./images/redcar.png" id="redcar"></div>';
+        $(this).append(newCarCode);
+        $("#ob" + num).css(carLCSS);
+        leftCars.push("#ob" + num);
+        num++;
     });
 
+    $streetR.each(function() {
+        newCarCode = '<div id="ob' + num + '"><img src="./images/redcar.png" id="redcar"></div>';
+        $(this).append(newCarCode);
+        $("#ob" + num).css(carRCSS);
+        rightCars.push("#ob" + num);
+        num++;
+    });
+}
+
+var increaseSpeed = function() {
+    speed -= 30;
 }
 
 //create info sequence
