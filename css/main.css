@@ -1,0 +1,85 @@
+#ob1,
+#ob3,
+#ob5,
+#ob7 {
+    right: -120%;
+    z-index: 10;
+    height: 30px;
+    width: 60px;
+    display: inline-block;
+    position: relative;
+}
+
+
+
+#ob2,
+#ob4,
+#ob6,
+#ob8 {
+    left: -100%;
+    z-index: 10;
+    height: 30px;
+    width: 60px;
+    display: inline-block;
+    position: relative;
+}
+
+#frog {
+    background-image: url('../images/frog.jpg');
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    left: 50%;
+}
+
+#median {
+    background-image: url('../images/grass.jpg');
+    height: 40px;
+    width: 100%;
+}
+
+.sidewalk {
+    background-image: url('../images/sidewalk.png');
+    height: 30px;
+    width: 100%;
+}
+
+.lines {
+    height: 2px;
+    width: 100%;
+    background-color: yellow;
+}
+
+.board {
+    padding: 0;
+    border-width: 20px;
+    border-style: solid;
+    border-color: green;
+    overflow: hidden;
+}
+
+.board-flash-red {
+    border-color: red;
+}
+
+.board-flash-white {
+    border-color: white;
+}
+
+.street-right,
+.street-left {
+    background-color: black;
+}
+
+#score-board {
+    background-color: #008888;
+}
+
+.title {
+    background-color: black;
+    color: green;
+}
+
+body {
+    background-color: black;
+}

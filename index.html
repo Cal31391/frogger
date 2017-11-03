@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--images: http://allpicstop.com/car/car_top_view_picture.html
+http://www.clker.com/clipart-351609.html
+https://www.istockphoto.com/illustrations/top-view-tree-cartoon-->
+
+<head>
+    <title>jFrogger</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <link href="css/main.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div class="game-wrapper">
+        <div class="row title-row" id="title-row">
+            <div class="col-md-12 text-center title">
+                <h1>jFrogger</h1>
+            </div>
+        </div>
+        <div class="row game-row">
+            <div class="col-md-9 board" id="board">
+                <div class="sidewalk" id="top-sidewalk"></div>
+                <div class="street-left" id="street-1-left">
+                    <div id="ob1">
+                        <img src='./images/redcar.png' id="redcar">
+                    </div>
+                </div>
+                <div class="lines"></div>
+                <div class="street-right" id="street-1-right">
+                    <div id="ob2">
+                        <img src='./images/bluecar.png' id="redcar">
+                    </div>
+                </div>
+                <div id="median"></div>
+                <div class="street-left" id="street-2-left">
+                    <div id="ob3">
+                        <img src='./images/pinkcar.png' id="redcar">
+                    </div>
+                </div>
+                <div class="lines"></div>
+                <div class="street-right" id="street-2-right">
+                    <div id="ob4">
+                        <img src='./images/graycar.png' id="redcar">
+                    </div>
+                </div>
+                <div id="median"></div>
+                <div class="street-left" id="street-3-left">
+                    <div id="ob5">
+                        <img src='./images/redcar.png' id="redcar">
+                    </div>
+                </div>
+                <div class="lines"></div>
+                <div class="street-right" id="street-3-right">
+                    <div id="ob6">
+                        <img src='./images/graycar.png' id="redcar">
+                    </div>
+                </div>
+                <div id="median"></div>
+                <div class="street-left" id="street-4-left">
+                    <div id="ob7">
+                        <img src='./images/tancar.png' id="redcar">
+                    </div>
+                </div>
+                <div class="lines"></div>
+                <div class="street-right" id="street-4-right">
+                    <div id="ob8">
+                        <img src='./images/bluecar.png' id="redcar">
+                    </div>
+                </div>
+                <div class="sidewalk">
+                    <div class="frog" id="frog"></div>
+                </div>
+            </div>
+            <div class="col-md-3 score-board" id="score-board">
+                <h1>Score</h1>
+                <h4 id="points">Points: 0</h4>
+                <h4 id="level">Level: 1</h4>
+            </div>
+        </div>
+    </div>
+</body>
+<!-- add scripts -->
+<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script src="js/main.js"></script>
