@@ -1,3 +1,16 @@
+/*  Caroline Lee
+    11-4-2017
+    css for Lab6
+*/
+
+body {
+    background-color: black;
+}
+
+
+
+/*cars moving left*/
+
 #ob1,
 #ob3,
 #ob5,
@@ -9,6 +22,10 @@
     display: inline-block;
     position: relative;
 }
+
+
+
+/*cars moving right*/
 
 #ob2,
 #ob4,
@@ -22,6 +39,10 @@
     position: relative;
 }
 
+
+
+/*the frog*/
+
 #frog {
     background-image: url('../images/frog.jpg');
     height: 20px;
@@ -30,11 +51,19 @@
     left: 50%;
 }
 
+
+
+/*the medians*/
+
 #median {
     background-image: url('../images/grass.jpg');
     height: 40px;
     width: 100%;
 }
+
+
+
+/*the sidewalks*/
 
 .sidewalk {
     background-image: url('../images/sidewalk.png');
@@ -42,11 +71,19 @@
     width: 100%;
 }
 
+
+
+/*the road lines*/
+
 .lines {
     height: 2px;
     width: 100%;
     background-color: yellow;
 }
+
+
+
+/*the whole highway*/
 
 .board {
     padding: 0;
@@ -56,36 +93,55 @@
     overflow: hidden;
 }
 
+
+
+/*flashes board red*/
+
 .board-flash-red {
     border-color: red;
 }
 
+
+
+/*flashes board white*/
+
 .board-flash-white {
     border-color: white;
 }
+
+
+/*the streets*/
 
 .street-right,
 .street-left {
     background-color: black;
 }
 
+
+/*the score board*/
+
 #score-board {
     background-color: #008888;
 }
+
+
+/*the title of the game*/
 
 .title {
     background-color: black;
     color: green;
 }
 
-body {
-    background-color: black;
-}
+
+/*the info modal*/
 
 .info-board {
     background-color: gray;
     padding: 5%;
 }
+
+
+/*the main buttons*/
 
 .game-btn {
     padding: 1%;
@@ -94,16 +150,43 @@ body {
     font-weight: bold;
 }
 
-#info-modal {
+
+/*the modals' base styles*/
+
+#info-modal,
+#done-modal {
     position: fixed;
+    padding: 0% 1% 0% 1%;
     z-index: 100;
     top: 30%;
     left: 25%;
-    height: 40%;
+    height: 45%;
     width: 50%;
     border-style: solid;
-    border-color: yellow;
-    background: #888888;
-    overflow: auto;
+    border-color: #008899;
+    border-width: 8px;
+    background: white;
     display: none;
+}
+
+
+/*the title of the info modal*/
+
+.info-title {
+    text-align: center;
+    font-weight: bold;
+}
+
+
+/*the info in the info modal*/
+
+.info-par {
+    font-size: 14px;
+}
+
+
+/*for part in info modal in ()*/
+
+.return-to-game {
+    cursor: pointer;
 }

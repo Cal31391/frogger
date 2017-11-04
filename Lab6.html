@@ -1,3 +1,9 @@
+<!--
+	Caroline Lee
+	11/4/2017
+	Lab 6
+	Frogger written in jQuery
+-->
 <!DOCTYPE html>
 <html lang="en">
 <!--images: http://allpicstop.com/car/car_top_view_picture.html
@@ -88,7 +94,20 @@ https://www.istockphoto.com/illustrations/top-view-tree-cartoon-->
     </div>
     <div class="modal" id="info-modal">
         <div class="info">
-            <p>words words words</p>
+            <h3 class="info-title">Object of the game:</h3>
+            <p class="info-par">The object of the game is to make it across the highway without getting run over.
+                <br>Make it to the top of the screen to advance to the next level. Each level is a little harder than the last, so be careful!</p>
+            <h3 class="info-title">How to play:</h3>
+            <p class="info-par">Use the arrow keys to move the frog around the board. If the frog gets run over, it will be reset on the bottom sidewalk. Make it through all 20 levels to win the game!</p>
+            <br>
+            <p class="return-to-game">(Click here to return to game)</p>
+        </div>
+    </div>
+    <div class="modal" id="done-modal">
+        <div class="done">
+            <h2>You Won!</h2>
+            <button class="btn btn-lg btn-block game-btn" id="new-game" onclick="restartGame()">New Game</button>
+            <button class="btn btn-lg btn-block game-btn" id="exit-game" onclick="exitGame()">Exit Game</button>
         </div>
     </div>
 </body>
